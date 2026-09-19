@@ -183,6 +183,31 @@ export function Dashboard() {
           </div>
         )}
 
+        {/* Live Google Sheet banner */}
+        {!IS_DEMO_MODE && (
+          <div style={{
+            margin: 'var(--space-4) 0',
+            padding: 'var(--space-3) var(--space-5)',
+            background: 'linear-gradient(90deg, rgba(16,185,129,.12), rgba(5,150,105,.08))',
+            border: '1px solid rgba(16,185,129,.3)',
+            borderRadius: 'var(--radius-md)',
+            fontSize: 13, color: '#047857', fontWeight: 500,
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8
+          }}>
+            <span>
+              🟢 <strong>Connected to Live Google Sheet</strong> — Source: <strong>Meta Ads Data</strong> ({rawData?.length ?? 0} active records fetched)
+            </span>
+            <a
+              href="https://docs.google.com/spreadsheets/d/1fo0PSwCaqAVbV91EEP-Ef9436xdTM59mz4_TToWk4Ew/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#047857', textDecoration: 'underline', fontSize: 12 }}
+            >
+              Open Google Sheet ↗
+            </a>
+          </div>
+        )}
+
         {/* Fetch error banner (only for real errors, not demo mode) */}
         {error && !IS_DEMO_MODE && (
           <div className={styles.errorBanner}>

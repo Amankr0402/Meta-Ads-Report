@@ -26,13 +26,13 @@ import { getPresetRange } from '../utils/dateHelpers';
 
 const FilterContext = createContext(null);
 
-const STORAGE_KEY = 'meta-ads-filters-v2';
+const STORAGE_KEY = 'meta-ads-filters-live-v3';
 
-// ── Default filter state: 1 September to 16 September 2026 ─────────────────
+// ── Default filter state: All Time / Live Sheet (shows all rows from sheet) ───
 const DEFAULT_FILTERS = {
-  preset: 'sepReport',
-  dateFrom: new Date(2026, 8, 1, 0, 0, 0),
-  dateTo: new Date(2026, 8, 16, 23, 59, 59),
+  preset: 'all',
+  dateFrom: null,
+  dateTo: null,
   campaigns: [],
   adSets: [],
   platforms: [],

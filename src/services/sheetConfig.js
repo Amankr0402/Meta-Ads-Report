@@ -83,9 +83,28 @@ export const COLUMN_MAP = [
  * Build a lookup map from sheetHeader → column config.
  * Used by sheetService.js to map raw column names to internal fields.
  */
-export const HEADER_TO_CONFIG = Object.fromEntries(
-  COLUMN_MAP.map((col) => [col.sheetHeader.toLowerCase().trim(), col])
-);
+export const HEADER_TO_CONFIG = {
+  ...Object.fromEntries(
+    COLUMN_MAP.map((col) => [col.sheetHeader.toLowerCase().trim(), col])
+  ),
+  // Snake_case & direct column aliases from live Meta export / Google Sheet
+  'campaign_name':  { field: 'campaignName', type: 'string', label: 'Campaign' },
+  'adset_name':     { field: 'adSetName',    type: 'string', label: 'Ad Set' },
+  'ad_name':        { field: 'adName',       type: 'string', label: 'Ad' },
+  'spend':          { field: 'spend',        type: 'number', label: 'Spend' },
+  'impressions':    { field: 'impressions',  type: 'number', label: 'Impressions' },
+  'reach':          { field: 'reach',        type: 'number', label: 'Reach' },
+  'frequency':      { field: 'frequency',    type: 'number', label: 'Frequency' },
+  'clicks':         { field: 'clicksAll',    type: 'number', label: 'Clicks' },
+  'ctr':            { field: 'ctrAll',       type: 'number', label: 'CTR' },
+  'cpc':            { field: 'cpcAll',       type: 'number', label: 'CPC' },
+  'date_start':     { field: 'date',         type: 'date',   label: 'Date' },
+  'date_stop':      { field: 'dateStop',     type: 'date',   label: 'Date Stop' },
+  // Summary tab headers
+  'campaign summary — period: last_7d campaign': { field: 'campaignName', type: 'string', label: 'Campaign' },
+  'campaign':       { field: 'campaignName', type: 'string', label: 'Campaign' },
+  'ctr (%)':        { field: 'ctrAll',       type: 'number', label: 'CTR' },
+};
 
 /**
  * Build a lookup map from field → label for the UI.
@@ -93,3 +112,4 @@ export const HEADER_TO_CONFIG = Object.fromEntries(
 export const FIELD_LABELS = Object.fromEntries(
   COLUMN_MAP.map((col) => [col.field, col.label])
 );
+

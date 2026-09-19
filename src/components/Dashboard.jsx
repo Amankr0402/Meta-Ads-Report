@@ -36,16 +36,20 @@ import styles from '../styles/Dashboard.module.css';
 // ── Column definitions for the three breakdown tables ─────────────────────
 
 const CAMPAIGN_COLUMNS = [
-  { key: 'campaignName',  label: 'Campaign',     sortable: true,  format: 'string',   width: 220 },
-  { key: 'spend',         label: 'Spend',        sortable: true,  format: 'currency', align: 'right', conditional: true },
-  { key: 'impressions',   label: 'Impressions',  sortable: true,  format: 'compact',  align: 'right' },
-  { key: 'linkClicks',    label: 'Link Clicks',  sortable: true,  format: 'number',   align: 'right' },
-  { key: 'ctrLink',       label: 'CTR (Link)',   sortable: true,  format: 'percent',  align: 'right', conditional: true },
-  { key: 'cpm',           label: 'CPM',          sortable: true,  format: 'currency', align: 'right', conditional: true },
-  { key: 'leads',         label: 'Leads',        sortable: true,  format: 'number',   align: 'right' },
+  { key: 'campaignName',  label: 'Campaign',      sortable: true,  format: 'string',   width: 240 },
+  { key: 'adStatus',      label: 'Delivery',      sortable: true,  format: 'string',   align: 'center' },
+  { key: 'spend',         label: 'Spend',         sortable: true,  format: 'currency', align: 'right', conditional: true },
+  { key: 'results',       label: 'Results',       sortable: true,  format: 'number',   align: 'right' },
+  { key: 'costPerResult', label: 'Cost / Result', sortable: true,  format: 'currency', align: 'right', conditional: true },
+  { key: 'installs',      label: 'App Installs',  sortable: true,  format: 'number',   align: 'right' },
+  { key: 'impressions',   label: 'Impressions',   sortable: true,  format: 'compact',  align: 'right' },
+  { key: 'reach',         label: 'Reach',         sortable: true,  format: 'compact',  align: 'right' },
+  { key: 'linkClicks',    label: 'Link Clicks',   sortable: true,  format: 'number',   align: 'right' },
+  { key: 'ctrLink',       label: 'CTR (Link)',    sortable: true,  format: 'percent',  align: 'right', conditional: true },
+  { key: 'cpm',           label: 'CPM',           sortable: true,  format: 'currency', align: 'right', conditional: true },
+  { key: 'leads',         label: 'Leads',         sortable: true,  format: 'number',   align: 'right' },
   { key: 'costPerLead',   label: 'CPL',          sortable: true,  format: 'currency', align: 'right', conditional: true },
-  { key: 'purchases',     label: 'Purchases',    sortable: true,  format: 'number',   align: 'right' },
-  { key: 'roas',          label: 'ROAS',         sortable: true,  format: 'roas',     align: 'right', conditional: true },
+  { key: 'roas',          label: 'ROAS',          sortable: true,  format: 'roas',     align: 'right', conditional: true },
 ];
 
 const AD_SET_COLUMNS = [
@@ -76,6 +80,9 @@ const AD_COLUMNS = [
 // ── KPI card definitions ───────────────────────────────────────────────────
 const KPI_DEFS = [
   { key: 'spend',         label: 'Total Spend',     format: 'currency', isPositiveGood: false, icon: <DollarSign size={16} /> },
+  { key: 'results',       label: 'Total Results',   format: 'number',   isPositiveGood: true,  icon: <Target size={16} /> },
+  { key: 'costPerResult', label: 'Cost / Result',   format: 'currency', isPositiveGood: false, icon: <DollarSign size={16} /> },
+  { key: 'installs',      label: 'App Installs',    format: 'number',   isPositiveGood: true,  icon: <Download size={16} /> },
   { key: 'impressions',   label: 'Impressions',     format: 'compact',  isPositiveGood: true,  icon: <Eye size={16} /> },
   { key: 'reach',         label: 'Reach',           format: 'compact',  isPositiveGood: true,  icon: <Users size={16} /> },
   { key: 'linkClicks',    label: 'Link Clicks',     format: 'compact',  isPositiveGood: true,  icon: <MousePointerClick size={16} /> },
@@ -85,7 +92,6 @@ const KPI_DEFS = [
   { key: 'leads',         label: 'Total Leads',     format: 'number',   isPositiveGood: true,  icon: <Target size={16} /> },
   { key: 'costPerLead',   label: 'Cost / Lead',     format: 'currency', isPositiveGood: false, icon: <DollarSign size={16} /> },
   { key: 'purchases',     label: 'Purchases',       format: 'number',   isPositiveGood: true,  icon: <ShoppingCart size={16} /> },
-  { key: 'purchaseValue', label: 'Purchase Value',  format: 'currency', isPositiveGood: true,  icon: <DollarSign size={16} /> },
   { key: 'roas',          label: 'ROAS',            format: 'roas',     isPositiveGood: true,  icon: <Zap size={16} /> },
   { key: 'frequency',     label: 'Frequency',       format: 'number',   isPositiveGood: false, icon: <Eye size={16} /> },
 ];

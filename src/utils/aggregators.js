@@ -35,7 +35,7 @@ export function computeKpis(data) {
     return {
       spend: 0, impressions: 0, reach: 0, clicksAll: 0, linkClicks: 0,
       ctrAll: 0, ctrLink: 0, cpcAll: 0, cpcLink: 0, cpm: 0,
-      leads: 0, costPerLead: 0, results: 0, costPerResult: 0,
+      leads: 0, costPerLead: 0, results: 0, costPerResult: 0, installs: 0,
       purchases: 0, purchaseValue: 0, roas: 0, frequency: 0, engagement: 0,
     };
   }
@@ -47,6 +47,7 @@ export function computeKpis(data) {
   const linkClicks    = sumField(data, 'linkClicks');
   const leads         = sumField(data, 'leads');
   const results       = sumField(data, 'results');
+  const installs      = sumField(data, 'installs');
   const purchases     = sumField(data, 'purchases');
   const purchaseValue = sumField(data, 'purchaseValue');
   const engagement    = sumField(data, 'engagement');
@@ -65,7 +66,7 @@ export function computeKpis(data) {
   return {
     spend, impressions, reach, clicksAll, linkClicks,
     ctrAll, ctrLink, cpcAll, cpcLink, cpm,
-    leads, costPerLead, results, costPerResult,
+    leads, costPerLead, results, costPerResult, installs,
     purchases, purchaseValue, roas, frequency, engagement,
   };
 }

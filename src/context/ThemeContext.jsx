@@ -9,14 +9,14 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 const ThemeContext = createContext(null);
 
-const STORAGE_KEY = 'meta-ads-theme';
+const STORAGE_KEY = 'meta-ads-theme-v2';
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    // Rehydrate from localStorage, fallback to system preference
+    // Default to light theme
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored === 'dark' || stored === 'light') return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'light';
   });
 
   // Apply theme to <html> element

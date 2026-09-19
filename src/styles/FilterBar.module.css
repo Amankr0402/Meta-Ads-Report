@@ -1,0 +1,228 @@
+/* FilterBar.module.css */
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ── Date presets ───────────────────────────────────────────────────────── */
+.presetGroup {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 3px;
+}
+
+.presetBtn {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.presetBtn:hover { background: var(--bg-surface-hover); color: var(--text-primary); }
+
+.presetBtn.active {
+  background: var(--brand-primary);
+  color: #fff;
+  box-shadow: var(--shadow-brand);
+}
+
+/* ── Custom date inputs ─────────────────────────────────────────────────── */
+.dateInputGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.dateInput {
+  padding: 5px 10px;
+  font-size: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast);
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: var(--border-color-focus);
+  box-shadow: 0 0 0 2px rgba(99,102,241,.15);
+}
+
+/* ── Multi-select filter ────────────────────────────────────────────────── */
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.filterLabel {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.filterSelect {
+  appearance: none;
+  padding: 5px 28px 5px 10px;
+  font-size: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+  min-width: 140px;
+  transition: border-color var(--transition-fast);
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: var(--border-color-focus);
+  box-shadow: 0 0 0 2px rgba(99,102,241,.15);
+}
+
+.selectArrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-muted);
+}
+
+/* ── Multi-select dropdown ──────────────────────────────────────────────── */
+.multiSelectContainer {
+  position: relative;
+}
+
+.multiSelectTrigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: 5px 10px;
+  font-size: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+  min-width: 150px;
+  transition: border-color var(--transition-fast);
+  text-align: left;
+}
+
+.multiSelectTrigger:hover { border-color: var(--brand-primary); }
+
+.multiSelectTrigger.open {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px rgba(99,102,241,.15);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--brand-primary);
+  color: #fff;
+  border-radius: var(--radius-full);
+}
+
+.multiSelectDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 200;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 220px;
+  max-height: 260px;
+  overflow-y: auto;
+  animation: fadeIn 0.15s ease;
+}
+
+.dropdownSearch {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dropdownSearchInput {
+  width: 100%;
+  padding: 5px 8px;
+  font-size: 12px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+.dropdownSearchInput:focus { outline: none; border-color: var(--brand-primary); }
+
+.dropdownOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 7px var(--space-3);
+  font-size: 12px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.dropdownOption:hover { background: var(--bg-surface-hover); }
+.dropdownOption.selected { color: var(--brand-primary); background: rgba(99,102,241,.06); }
+
+.dropdownCheckbox {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--brand-primary);
+  flex-shrink: 0;
+}
+
+/* ── Reset button ───────────────────────────────────────────────────────── */
+.resetBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-negative);
+  background: var(--color-negative-bg);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-sm);
+  margin-left: auto;
+  transition: all var(--transition-fast);
+}
+
+.resetBtn:hover {
+  background: var(--color-negative);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .bar { gap: var(--space-2); }
+  .presetGroup { flex-wrap: wrap; }
+  .filterSelect, .multiSelectTrigger { min-width: 120px; }
+}

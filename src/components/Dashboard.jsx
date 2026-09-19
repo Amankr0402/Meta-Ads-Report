@@ -179,7 +179,7 @@ export function Dashboard() {
             borderRadius: 'var(--radius-md)',
             fontSize: 13, color: 'var(--brand-primary)', fontWeight: 500,
           }}>
-            📊 <strong>Meta Ads Performance Report</strong> — Showing data for <strong>1 September – 16 September 2026</strong> (200 campaigns).
+            📊 <strong>Meta Ads Performance Report</strong> — Showing data for <strong>1 September – 16 September 2026</strong> (Active &amp; Spending Campaigns | ₹0 spend excluded).
           </div>
         )}
 

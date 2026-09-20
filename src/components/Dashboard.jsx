@@ -195,10 +195,10 @@ export function Dashboard() {
             display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8
           }}>
             <span>
-              🟢 <strong>Connected to Live Google Sheet</strong> — Source: <strong>Meta Ads Data</strong> ({rawData?.length ?? 0} active records fetched)
+              🟢 <strong>Connected to Live Google Sheet</strong> — Source: <strong>Meta Ads Data</strong> ({rawData?.length ? rawData.length.toLocaleString() : 0} records synced live)
             </span>
             <a
-              href="https://docs.google.com/spreadsheets/d/1fo0PSwCaqAVbV91EEP-Ef9436xdTM59mz4_TToWk4Ew/edit?usp=sharing"
+              href="https://docs.google.com/spreadsheets/d/1iBUroD04LLZpGWRe0BucumWOxYSFDwlMBoGPJa7S6co/edit?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#047857', textDecoration: 'underline', fontSize: 12 }}

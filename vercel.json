@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/sheet/:path*",
+      "destination": "https://docs.google.com/spreadsheets/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

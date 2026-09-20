@@ -12,7 +12,7 @@ import Papa from 'papaparse';
 import { HEADER_TO_CONFIG } from './sheetConfig';
 import { getMockData } from './mockData';
 
-const SHEET_ID  = import.meta.env.VITE_SHEET_ID;
+const SHEET_ID  = import.meta.env.VITE_SHEET_ID || '1iBUroD04LLZpGWRe0BucumWOxYSFDwlMBoGPJa7S6co';
 const SHEET_GID = import.meta.env.VITE_SHEET_GID ?? '0';
 const SHEET_TAB = import.meta.env.VITE_SHEET_TAB || 'Meta Ads Data';
 
